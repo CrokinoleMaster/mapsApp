@@ -3,19 +3,19 @@ var app = angular.module( 'myApp', ['ngRoute', 'google-maps'] );
 app.config(function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl: '/templates/home.html',
+            templateUrl: 'templates/home.html',
             controller:  'HomeController'
         })
         .when('/sidebyside', {
-            templateUrl: '/templates/sidebyside.html',
+            templateUrl: 'templates/sidebyside.html',
             controller: 'MapController1'
         })
         .when('/layered', {
-            templateUrl: '/templates/layered.html',
+            templateUrl: 'templates/layered.html',
             controller: 'MapController2'
         })
         .when('/singlelayered', {
-            templateUrl: '/templates/singlelayered.html',
+            templateUrl: 'templates/singlelayered.html',
             controller: 'MapController3'
         })
         .otherwise({
