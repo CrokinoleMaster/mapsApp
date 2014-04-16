@@ -27,6 +27,18 @@ app.controller('HomeController', function($scope){
 
 });
 
+app.controller('NavController', function($scope, $location){
+    $scope.location = $location;
+    $scope.links = [
+        { url: 'sidebyside', title: 'Side by side'},
+        { url: 'layered', title: 'Layered'},
+        { url: 'singlelayered', title: 'Single layered'}
+    ];
+    $scope.getActive = function(link){
+        return ('/'+link.url === $location.path());
+    };
+});
+
 app.controller('MapController1', function($scope){
 
     $scope.map = {

@@ -7,7 +7,7 @@ html(ng-app='myApp')
 
     body
         section
-            nav.top-bar
+            nav.top-bar(ng-controller='NavController')
                 ul.title-area
                     li.name
                         h1
@@ -16,12 +16,8 @@ html(ng-app='myApp')
                         a Menu
                 section.top-bar-section
                     ul
-                        li
-                            a(href='#/sidebyside') side by side
-                        li
-                            a(href='#/layered') Layered
-                        li
-                            a(href='#/singlelayered') Single layered
+                        li(ng-repeat='link in links' ng-class='{active:getActive(link)}')
+                            a(href='#{{ link.url }}' ng-bind='link.title')
 
         div(ng-view='')
 
