@@ -1,0 +1,21 @@
+section(ng-controller='MapController2')
+    nav.top-bar
+        ul.title-area
+            li.name
+                h1
+                    a Layered map
+            li.toggle-topbar.menu-icon
+                a Menu
+        section.top-bar-section
+            ul
+                li
+                    button(ng-click='map.toggleHeat()') Heat Layer
+                li
+                    button(ng-click='map.toggleTraffic()') Traffic Layer
+                li
+                    button(ng-click='map.toggleBike()') Bike Layer
+    .row.single-map
+        google-map.medium-12.columns(center='map.center' zoom='map.zoom' mark-click='map.markClick' draggable='true')
+            layer(type='HeatmapLayer' namespace='visualization' show='map.showHeatmap' onCreated='map.heatLayerCallback')
+            layer(type='TrafficLayer' show='map.showTraffic')
+            layer(type='BicyclingLayer' show='map.showBike')
