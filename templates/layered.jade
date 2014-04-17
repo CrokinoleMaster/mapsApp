@@ -15,7 +15,4 @@ section(ng-controller='MapController2')
                 li
                     button(ng-click='map.toggleBike()') Bike Layer
     .row.single-map
-        google-map.medium-12.columns(center='map.center' zoom='map.zoom' mark-click='map.markClick' draggable='true')
-            layer(type='HeatmapLayer' namespace='visualization' show='map.showHeatmap' onCreated='map.heatLayerCallback')
-            layer(type='TrafficLayer' show='map.showTraffic')
-            layer(type='BicyclingLayer' show='map.showBike')
+        leaflet.medium-12.columns
